@@ -12,4 +12,4 @@
 
 Header : logo + Lien de navigation
 
-Footer : lien vers A propos + copyright + 
+Footer : lien vers A propos + copyright + ?
