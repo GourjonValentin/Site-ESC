@@ -71,12 +71,22 @@ li>ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0;
-    margin: 0;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    border: 1px solid white ;
+    border-radius: 15px;
 }
 
 .bureau-photo {
     width: 100%;
     max-width: 100%;
     height: auto;
+    border-radius: 100px;
+}
+
+#bureau {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
