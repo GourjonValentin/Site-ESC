@@ -1,101 +1,208 @@
+/* style.css */
 body {
-    background-color: #222;
+    font-family: 'Arial', sans-serif;
+    background-color: #1c1c1c;
     color: #fff;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 header {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 0;
     text-align: center;
-    width: 100%;
-    display: flex;
+    padding: 20px;
+    background-color: #2c2c2c;
 }
 
-
-.logo {
-    margin: 0 auto;
-    width: 30%;
+header .logo {
+    width: 150px;
     height: auto;
 }
 
-.postit {
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav .postit {
     display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    justify-content: space-between;
+    justify-content: center;
+    list-style: none;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
 }
 
-.postit-item {
-    background-color: steelblue;
-    border: 2px solid black;
+nav .postit-item {
+    margin: 0 15px;
     position: relative;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 15px;
-    
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease; /* Adjusted transition */
 }
 
-li>ul {
+nav .postit-item:hover {
+    transform: scale(1.05); /* More subtle scaling */
+}
+
+nav .postit-item ul {
     display: none;
     position: absolute;
-    min-width: 200px;
-    z-index: 1;
+    background-color: #444;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    border-radius: 5px;
 }
 
-.postit-item:hover>ul {
+nav .postit-item:hover ul {
     display: block;
 }
 
-.postit-item>ul>li {
-    background-color: #FFD700;
-    border: 1px solid black;
-    padding: 5px;
-    margin: 5px;
+nav .postit-item ul li {
+    padding: 5px 0;
+}
+
+a {
+    color: #1e90ff; /* Link color */
+    text-decoration: none;
+    transition: color 0.2s ease; /* Add transition for color change */
+}
+
+a:hover, a:focus {
+    color: #ff6347; /* Color on hover and focus */
+}
+
+a:visited {
+    color: #9370db; /* Color for visited links */
+}
+
+section {
+    padding: 20px;
+}
+
+h2 {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     text-align: center;
-    border-radius: 15px;
-    list-style-type: none;
-    position: relative;
-    left: -60px;
-    top : 10px; 
+    color: #e3e3e3;
+    text-shadow: 2px 2px 4px #000;
+    width: 100%;  /* Ensures the h2 takes the full width */
 }
 
-.bureau-elt {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 10px;
-    margin: 10px;
-    width: 200px;
-    border: 1px solid white ;
-    border-radius: 15px;
-}
-
-.bureau-photo {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: 100px;
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ccc;
 }
 
 #bureau {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    justify-content: space-between;
+    flex-direction: row; /* Ensure elements are aligned in a row on larger screens */
 }
 
-#bureau>h2 {
+.bureau-elt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    flex: 1 1 calc(33.333% - 20px); /* Allow elements to take up 1/3rd of the width */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.bureau-photo {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.bureau-elt p {
+    margin: 5px 0;
+}
+
+.bureau-elt .promo,
+.bureau-elt .role {
+    font-size: 0.9em;
+    color: #999;
+}
+
+#partenaires {
+    text-align: center;
+}
+
+#partenaires .partenaire-photo {
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top; /* Ensure alignment in a line */
+}
+
+footer {
+    background-color: #2c2c2c;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
     width: 100%;
+    bottom: 0;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav ul a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav .postit {
+        flex-direction: column;
+    }
+
+    nav .postit-item {
+        margin: 10px 0;
+    }
+
+    #bureau {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        align-items: center;
+    }
+
+    .bureau-elt {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        width: 100px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .bureau-photo {
+        width: 80px;
+    }
+
+    .partenaire-photo {
+        width: 100px;
+    }
+}
+
+section>table {
+    font-size: 30px;
     text-align: center;
 }
