@@ -90,4 +90,13 @@ li>ul {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#bureau>h2 {
+    width: 100%;
+    text-align: center;
 }
