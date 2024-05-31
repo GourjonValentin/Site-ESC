@@ -1,3 +1,5 @@
+const sound = new Audio('../sound/scream.mp3');
+
 document.addEventListener("DOMContentLoaded", function() {
     const images = document.querySelectorAll('.falling-image');
     
@@ -25,13 +27,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     opacity: 0.3;
                 }
                 25% {
-                    transform: translateX(20px) rotate(15deg);
+                    transform: translateX(40px) rotate(15deg);
                 }
                 50% {
-                    transform: translateX(-20px) rotate(-15deg);
+                    transform: translateX(-40px) rotate(-15deg);
                 }
                 75% {
-                    transform: translateX(15px) rotate(10deg);
+                    transform: translateX(30px) rotate(10deg);
                 }
                 100% {
                     top: ${pageHeight}px; /* Fall to the bottom of the page */
@@ -49,3 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
         image.style.animationName = `fall-${image.dataset.index}`;
     });
 });
+
+
+window.addEventListener("click", function() {
+    const start = Math.random() * sound.duration;
+    sound.currentTime = start;
+    sound.play();
+    setTimeout(() => {
+        sound.pause();
+    }, 3000);
+});
+

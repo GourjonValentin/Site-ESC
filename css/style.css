@@ -5,12 +5,15 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
+    cursor: url('../img/speed_hold_resized.png'), auto;
 }
+
 
 header {
     text-align: center;
     padding: 20px;
     background-color: #2c2c2c;
+    z-index: 9;
 }
 
 header .logo {
@@ -30,6 +33,7 @@ nav .postit {
     padding: 0;
     margin: 0;
     flex-wrap: wrap;
+    z-index: 10;
 }
 
 nav .postit-item {
@@ -38,6 +42,7 @@ nav .postit-item {
     cursor: pointer;
     transition: transform 0.2s ease, color 0.2s ease;
     /* Adjusted transition */
+    z-index: 10;
 }
 
 nav .postit-item:hover {
@@ -121,7 +126,7 @@ p {
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
-    flex: 1 1 calc(33.333% - 20px);
+    flex: 1 1 calc(20% - 20px);
     /* Allow elements to take up 1/3rd of the width */
     box-sizing: border-box;
     padding: 10px;
@@ -131,7 +136,7 @@ p {
 .bureau-photo {
     width: 100px;
     height: auto;
-    border-radius: 50%;
+    border-radius: 5%;
     margin-bottom: 10px;
 }
 
